@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" sizes="any" mask href="../resource/image/favicon.svg">
+    <link rel="shortcut icon" href="../resource/image/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../resource/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../resource/css/myreset.css">
+    <link rel="stylesheet" type="text/css" href="../resource/css/topic.css">
+    <script type="text/javascript" src="../resource/js/topic.js"></script>
+    <script type="text/javascript" src="../resource/js/ajaxfram.js"></script>
+    <script type="text/javascript">
+        AddListener(window, 'scroll', function() {
+            var top = document.getElementById('topcontainer');
+            var logo = document.getElementById('logo');
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop ||
+                document.body.scrollTop || 0;
+
+            if (scrollTop > 60) {
+                top.className = 'top-scroll';
+                logo.className = 'top-logoscroll';
+                for (var i = 0; i < document.getElementsByClassName('top-blockinfo').length; ++i) {
+                    document.getElementsByClassName('top-blockinfo')[i].className = 'top-blockinfoscroll';
+                }
+            } else {
+                top.className = 'top-container';
+                logo.className = 'top-logo';
+                // var e = document.getElementsByClassName('top-blockinfoscroll');
+                for (var i = 0; i < document.getElementsByClassName('top-blockinfoscroll').length; ++i) {
+                    document.getElementsByClassName('top-blockinfoscroll')[i].className = 'top-blockinfo';
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <core:if test="${empty topstate}">
+        <core:redirect url="GetTopInfoServlet"></core:redirect>
+    </core:if>
+    <core:remove var="topstate" /> -->
+    <div id="topcontainer" class="top-container">
+        <div class="top-panel">
+            <a href="../index.html">
+                <div id="logo" class="top-logo">
+                    <font color="dodgerblue">I</font>
+                    <font color="orangered">n</font>
+                    <font color="gold">n</font>
+                    <font color="dodgerblue">o</font>
+                    <font color="limegreen">o</font>
+                    <font color="orangered">b</font>
+                </div>
+            </a>
+            <div class="top-blockbox">
+                <div id="top-block-technology " class="top-blockinfo ">
+                    <a href="../technology/index.html"><span>技术交流</span></a> <span>发表文章:999</span>
+                </div>
+                <div id="top-block-dailylife " class="top-blockinfo ">
+                    <a href="../dailylife/index.html"><span>日常生活</span></a> <span>发表文章:999</span>
+                </div>
+                <div id="top-block-resource " class="top-blockinfo ">
+                    <a href="../shareresources/index.html"><span>资源分享</span></a> <span>发表文章:999</span>
+                </div>
+                <div id="top-block-official " class="top-blockinfo ">
+                    <a href="../comprehension/index.html"><span>心灵鸡汤</span></a> <span>发表文章:999</span>
+                </div>
+            </div>
+            <!-- <core:if test="${empty user } ">
+				<div class="top-headimgbox " style="display: none ">
+			</core:if>
+			<core:if test="${!empty user } ">
+				 <div class="top-headimgbox " style="display: block "> 
+			</core:if> -->
+            <div class="top-headimgbox " style="display: block ">
+                <div class="top-headimg ">
+                    <a href="userinfo.html"><img src="../resource/head/1002.png " alt=" "></a>
+                </div>
+                <span class="top-unread ">9</span>
+                <div class="top-outuserinfo ">
+                    <div class="top-userinfo ">
+                        <div class="top-headimg top-innerheadimg ">
+                            <a href="userinfo.html "> <img src="../resource/head/1002.png " alt=" "></a>
+                        </div>
+                        <b>祈雨芊叶</b>
+                        <div style="width: 87%; margin: 10px auto 20px auto; text-align: left ">
+                            <span style="text-align: left ;margin:0 45px 0 10px">文章:999</span> <span style="text-align: right;margin:0 10px 0 40px; ">点赞:999</span>
+                        </div>
+                        <div class="top-mark ">
+                            <span>等级</span>
+                            <span class="top-level " style="background-position: -153px -44px; "></span>
+                            <span class="top-markbox "> <span class="top-markbar " style="width:40% "></span>
+                            </span>
+                        </div>
+                        <div class="top-point ">
+                            40/<span style="color: #ccc ">100</span>
+                        </div>
+                        <div class="top-maskbar ">
+                            <hr>
+                        </div>
+                        <div class="top-buttonbox ">
+                            <div class="top-button ">
+                                <a href="DoGetUserDetails "> <i class="top-i top-i-u "></i> <span>个人主页</span>
+                                </a>
+                            </div>
+                            <div class="top-button ">
+                                <a href="DoGetUserDetails "> <i class="top-i top-i-m "></i> <span>网友留言</span>
+                                </a>
+                            </div>
+                            <div class="top-button ">
+                                <a href="DoGetUserDetails "> <i class="top-i top-i-t "></i> <span>所有文章</span>
+                                </a>
+                            </div>
+                            <div class="top-button ">
+                                <a href="DoGetUserDetails "> <i class="top-i top-i-f "></i> <span>我的收藏</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- <div class="top-loginout ">
+                            <a href="LoginOutServlet "><span>注销</span></a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- <core:if test="${empty user } ">
+				<div class="top-sign " style="display: block ">
+			</core:if>
+			<core:if test="${!empty user } ">
+				<div class="top-sign " style="display: none ">
+			</core:if> -->
+            <div class="top-sign " style="display: none ">
+                <a href="login.jsp "><span>登陆</span></a> <span>|</span> <a href="register.jsp "><span>注册</span></a>
+            </div>
+            <div class="top-searchbox ">
+                <input id="top-search " list="top-autocomple " name=" " value=" ">
+                <datalist id="top-autocomple ">
+				<option value="JasonBourne "></option>
+				<option value="Well Smith "></option>
+				<option value="Winter worth "></option>
+				<option value="哈巴卵 ">habaluan</option>
+				<option value="狗比 ">goubi</option>
+				</datalist>
+                <button type="button "></button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="text-title">机遇与挑战并存，机会就藏在抱怨声中。</h2>
+        <span class="text-content">有很多人成天郁闷，为什么别人的运气就那么好呢，而自己到处碰壁，怀才不遇，机遇什么时候才会降临到我头上。
+            <p>机遇只留给有准备的人，这句话是一点也没错，放眼望去，全世界的机遇多的去了，而机遇就藏在人们的抱怨声中，抱怨代表着别人不愿意或者做不到的挑战，如果你能将它搞定那你必将成功。
+        </span>
+    </div>
+</body>
+<link href="http://cdn.bootcss.com/highlight.js/9.4.0/styles/github-gist.min.css" rel="stylesheet">
+<script src="http://cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+</html>
